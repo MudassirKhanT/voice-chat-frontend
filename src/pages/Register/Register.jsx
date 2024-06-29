@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Register.module.css";
 import StepAvatar from "../Steps/StepAvatar/StepAvatar";
 import StepPhoneEmail from "../Steps/StepPhoneEmail/StepPhoneEmail";
@@ -14,7 +14,13 @@ const steps = {
   5: StepUsername,
 };
 const Register = () => {
-  return <div>This is a register Component</div>;
+  const [step, setstep] = useState(1);
+  const Step = steps[step];
+  return (
+    <div>
+      <Step></Step>
+    </div>
+  );
 };
 
 export default Register;
