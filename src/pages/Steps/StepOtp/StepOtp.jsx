@@ -1,7 +1,12 @@
 import React from "react";
 
-const StepOtp = () => {
-  return <div>Otp component</div>;
+const StepOtp = ({ onNext }) => {
+  return (
+    <>
+      <div>Otp component</div>
+      <button onClick={onNext}>Next</button>
+    </>
+  );
 };
 
 export default StepOtp;

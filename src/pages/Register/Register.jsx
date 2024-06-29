@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./Register.module.css";
+//import styles from "./Register.module.css";
 import StepAvatar from "../Steps/StepAvatar/StepAvatar";
 import StepPhoneEmail from "../Steps/StepPhoneEmail/StepPhoneEmail";
 import StepOtp from "../Steps/StepOtp/StepOtp";
@@ -13,12 +13,17 @@ const steps = {
   4: StepAvatar,
   5: StepUsername,
 };
+
 const Register = () => {
-  const [step, setstep] = useState(1);
+  const [step, setStep] = useState(1);
   const Step = steps[step];
+  function onNext() {
+    setStep(step + 1);
+    console.log("Moved to next page");
+  }
   return (
     <div>
-      <Step></Step>
+      <Step onNext={onNext} />
     </div>
   );
 };
