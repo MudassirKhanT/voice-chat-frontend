@@ -8,4 +8,11 @@
   font-size: 22px;
   list-style: 1.6;
   color: #c4c5c5;
+  margin-bottom: 30px;
+}
+.signinWrapper {
+  margin-top: 20px;
+}
+.hasInvite {
+  color: #0077ff;
 }
