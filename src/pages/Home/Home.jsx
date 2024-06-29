@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Home.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Card from "../../Components/shared/Card/Card";
 import Button from "../../Components/shared/Button/Button";
 const Home = () => {
@@ -10,12 +10,18 @@ const Home = () => {
     textDecoration: "none",
     marginLeft: "10px",
   };
+  //For redirecting we use the hook :- useNavigate
+  const navigate = useNavigate();
+  function startRegister() {
+    navigate("/register");
+    console.log("Button Clicked");
+  }
   return (
     <div className={styles.cardWrapper}>
       <Card title="Welcom to Codershouse!" icon="logo">
         <p className={styles.text}>We're working hard to get Codershouse ready for everyone! While we wrap up the finishing youches, we're adding people gradually to make sure nothing breaks</p>
         <div>
-          <Button text="Get your username"></Button>
+          <Button onClick={startRegister} text="Get your username"></Button>
         </div>
         <div className={styles.signinWrapper}>
           <span className={styles.hasInvite}>Have an invite text?</span>
