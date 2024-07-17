@@ -5,13 +5,12 @@ const api = axios.create({
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "*",
   },
 });
 
 // list of all apis
 export const sendOtp = (data) => api.post("/api/send-otp", data);
 export const verifyOtp = (data) => api.post("/api/verify-otp", data);
+export const activate = (data) => api.post("/api/activate", data);
 
 export default api;
