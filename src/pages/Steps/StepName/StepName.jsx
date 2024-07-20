@@ -20,7 +20,7 @@ const StepName = ({ onNext }) => {
     <>
       <Card title="What's your full name" icon="goggle-emoji">
         <TextInput value={fullName} onChange={(e) => setfullName(e.target.value)} />
-        <p className={styles.paragraph}>People use realk names at codershouse :)</p>
+        <p className={styles.paragraph}>People use real names at codershouse :)</p>
         <div className={styles.actionButtonWrap}>
           <Button onClick={nextStep} text="Next" />
         </div>
