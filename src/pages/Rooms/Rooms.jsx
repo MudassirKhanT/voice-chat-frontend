@@ -1,77 +1,83 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Rooms.module.css";
 import RoomCard from "../../Components/RoomCard/RoomCard";
+import AddRoomModel from "../../Components/AddRoomModel/AddRoomModel";
+const rooms = [
+  {
+    id: 1,
+    topic: "Which framework best for frontend ?",
+    speakers: [
+      {
+        id: 1,
+        name: "John Doe",
+        avatar: "/images/monkey-avatar.png",
+      },
+      {
+        id: 2,
+        name: "Jane Doe",
+        avatar: "/images/monkey-avatar.png",
+      },
+    ],
+    totalPeople: 40,
+  },
+  {
+    id: 3,
+    topic: "What’s new in machine learning?",
+    speakers: [
+      {
+        id: 1,
+        name: "John Doe",
+        avatar: "/images/monkey-avatar.png",
+      },
+      {
+        id: 2,
+        name: "Jane Doe",
+        avatar: "/images/monkey-avatar.png",
+      },
+    ],
+    totalPeople: 40,
+  },
+  {
+    id: 4,
+    topic: "Why people use stack overflow?",
+    speakers: [
+      {
+        id: 1,
+        name: "John Doe",
+        avatar: "/images/monkey-avatar.png",
+      },
+      {
+        id: 2,
+        name: "Jane Doe",
+        avatar: "/images/monkey-avatar.png",
+      },
+    ],
+    totalPeople: 40,
+  },
+  {
+    id: 5,
+    topic: "Artificial inteligence is the future?",
+    speakers: [
+      {
+        id: 1,
+        name: "John Doe",
+        avatar: "/images/monkey-avatar.png",
+      },
+      {
+        id: 2,
+        name: "Jane Doe",
+        avatar: "/images/monkey-avatar.png",
+      },
+    ],
+    totalPeople: 40,
+  },
+];
+
 const Rooms = () => {
-  const rooms = [
-    {
-      id: 1,
-      topic: "Which framework best for frontend ?",
-      speakers: [
-        {
-          id: 1,
-          name: "John Doe",
-          avatar: "/images/monkey-avatar.png",
-        },
-        {
-          id: 2,
-          name: "Jane Doe",
-          avatar: "/images/monkey-avatar.png",
-        },
-      ],
-      totalPeople: 40,
-    },
-    {
-      id: 3,
-      topic: "What’s new in machine learning?",
-      speakers: [
-        {
-          id: 1,
-          name: "John Doe",
-          avatar: "/images/monkey-avatar.png",
-        },
-        {
-          id: 2,
-          name: "Jane Doe",
-          avatar: "/images/monkey-avatar.png",
-        },
-      ],
-      totalPeople: 40,
-    },
-    {
-      id: 4,
-      topic: "Why people use stack overflow?",
-      speakers: [
-        {
-          id: 1,
-          name: "John Doe",
-          avatar: "/images/monkey-avatar.png",
-        },
-        {
-          id: 2,
-          name: "Jane Doe",
-          avatar: "/images/monkey-avatar.png",
-        },
-      ],
-      totalPeople: 40,
-    },
-    {
-      id: 5,
-      topic: "Artificial inteligence is the future?",
-      speakers: [
-        {
-          id: 1,
-          name: "John Doe",
-          avatar: "/images/monkey-avatar.png",
-        },
-        {
-          id: 2,
-          name: "Jane Doe",
-          avatar: "/images/monkey-avatar.png",
-        },
-      ],
-      totalPeople: 40,
-    },
-  ];
+  const [showModel, setShowModel] = useState(false);
+  function openModel() {
+    setShowModel(true);
+  }
 
   return (
     <>
@@ -85,7 +91,7 @@ const Rooms = () => {
             </div>
           </div>
           <div className={styles.right}>
-            <button className={styles.startRoomButton}>
+            <button onClick={openModel} className={styles.startRoomButton}>
               <img src="/images/add-room-icon.png" alt="add-room" />
               <span>Start a room</span>
             </button>
@@ -95,14 +101,11 @@ const Rooms = () => {
           {rooms.map((room) => (
             <>
               <RoomCard key={room.id} room={room} />
-              <RoomCard key={room.id} room={room} />
-              <RoomCard key={room.id} room={room} />
-              <RoomCard key={room.id} room={room} />
-              <RoomCard key={room.id} room={room} />
             </>
           ))}
         </div>
       </div>
+      {showModel && <AddRoomModel onClose={() => setShowModel(false)} />}
     </>
   );
 };

@@ -4,14 +4,17 @@
   justify-content: space-between;
   margin: 20px 0;
 }
+
 .left {
   display: flex;
   align-items: center;
 }
+
 .heading {
   font-size: 20px;
   font-weight: bold;
 }
+
 .searchBox {
   background: #262626;
   margin-left: 20px;
@@ -21,17 +24,20 @@
   min-width: 300px;
   border-radius: 20px;
 }
+
 .searchInput {
   background: transparent;
   border: none;
   outline: none;
   padding: 10px;
-  color: white;
+  color: #fff;
   width: 100%;
 }
+
 .heading {
   position: relative;
 }
+
 .heading::after {
   content: "";
   position: absolute;
@@ -48,16 +54,19 @@
   background: #20bd5f;
   padding: 5px 20px;
   border-radius: 20px;
-  color: white;
-  text-replace: all 3s ease-in-out;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
 }
+
 .startRoomButton span {
   font-size: 16px;
   margin-left: 10px;
 }
+
 .startRoomButton:hover {
-  background: darkgreen;
+  background: #0f6632;
 }
+
 .roomList {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
